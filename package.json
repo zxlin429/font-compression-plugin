@@ -1,0 +1,22 @@
+{
+  "name": "font-compression-plugin",
+  "version": "1.0.1",
+  "description": "字体压缩插件",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "font",
+    "compression",
+    "webpack",
+    "plugin",
+    "字体压缩"
+  ],
+  "author": "zxlin",
+  "license": "ISC",
+  "dependencies": {
+    "fontmin": "^1.0.1",
+    "webpack": "^5.89.0"
+  }
+}
