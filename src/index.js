@@ -1,3 +1,11 @@
+/*
+ * @Author       : zxlin
+ * @Date         : 2023-11-23 14:39:15
+ * @LastEditors  : zxlin
+ * @LastEditTime : 2024-03-26 10:58:03
+ * @FilePath     : \font-compression-plugin\src\index.js
+ * @Description  : 
+ */
 const Fontmin = require('fontmin')
 const { RawSource } = require('webpack-sources')
 
@@ -55,6 +63,10 @@ module.exports = class FontCompressionPlugin {
 
       if (this.option.path) {
         const assetsFile = Object.keys(compilation.assets).find(i => i.includes(this.option.path.slice(this.option.path.lastIndexOf('/') + 1, -4))) || ''
+        if (!assetsFile) {
+          console.log('\n项目未引用此字体:', this.option.path)
+          return
+        }
         const fontmin = new Fontmin()
           .src(this.option.path)
           .use(Fontmin.glyph({
@@ -80,7 +92,7 @@ module.exports = class FontCompressionPlugin {
               const r = new RegExp(baseFileName, 'g')
               if (r.test(source)) {
                 const newSource = source.replace(r, nextFileName)
-                compilation.updateAsset(v, new RawSource(Buffer.from(newSource)))
+                compilation.updateAsset(v, new RawSource(newSource))
               }
             }
           })

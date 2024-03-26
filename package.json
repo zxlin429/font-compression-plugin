@@ -1,6 +1,6 @@
 {
   "name": "font-compression-plugin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "字体压缩插件",
   "main": "src/index.js",
   "scripts": {

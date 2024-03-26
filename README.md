@@ -1,5 +1,6 @@
 # font-compression-plugin
 轻量级字体压缩webpack插件
+> 1.0.2修复了1.0.1无法同时使用多个字体的BUG
 ## 安装
 ```npm
 npm i -D font-compression-plugin
@@ -38,3 +39,4 @@ module.exports = {
   ]
 }
 ```
+
